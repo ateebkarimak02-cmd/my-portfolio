@@ -1,0 +1,48 @@
+#home {
+    background: radial-gradient(circle at 10% 20%, rgba(0, 188, 125, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 188, 125, 0.05) 0%, transparent 40%);
+    justify-content: center;
+    padding-top: 125px;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 50px;
+}
+
+.introduction-home h2 {
+    font-size: 2rem;
+    color: var(--text-dim);
+}
+
+.introduction-home span {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    display: block;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.profile-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 188, 125, 0.3);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.1);
+}

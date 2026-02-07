@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #00bc7d;
+    --bg-dark: #121212;
+    --card-bg: #1c1c1c;
+    --text-light: #ffffff;
+    --text-dim: #a6a09b;
+    --transition: 0.3s ease-in-out;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 9%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    position: relative;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    background: var(--primary-color);
+    border-radius: 8px;
+    transition: .3s ease-in-out;
+}
+
+nav a.active,
+a:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    filter: drop-shadow(0 0 15px #00bc7d);
+    transform: translateY(-2px);
+}
+
+
+#menu-icon {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+section {
+    min-height: 100vh;
+    padding: 120px 9% 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: animate 2s ease-in-out;
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
